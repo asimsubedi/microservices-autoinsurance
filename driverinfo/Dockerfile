@@ -17,7 +17,7 @@ RUN ls -lptr
 
 EXPOSE 8080
 
-# we are using ENTRYPOINT
-#CMD ["java", "-jar", "app.jar"]
+# we are using CMD Now
+CMD ["java", "-jar", "app.jar"]
 
-ENTRYPOINT ["sh","./setup.sh"]
+#ENTRYPOINT ["sh","./setup.sh"]

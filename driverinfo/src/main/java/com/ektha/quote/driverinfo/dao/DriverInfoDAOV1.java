@@ -113,7 +113,7 @@ public class DriverInfoDAOV1 implements InitializingBean {
 	@Override
 	public void afterPropertiesSet() throws Exception {
 
-		String filePath = System.getProperty(DATA_FILE_PATH);
+		/*String filePath = System.getProperty(DATA_FILE_PATH);
 
 		System.out.println("== File path" + filePath);
 
@@ -142,7 +142,7 @@ public class DriverInfoDAOV1 implements InitializingBean {
 			addDriverInfo(driver);
 
 		}
-		bfr.close();
+		bfr.close();*/
 
 	}
 

@@ -3,10 +3,13 @@
  */
 package com.ektha.quote.driverinfo.model;
 
+import javax.persistence.Embeddable;
+
 /**
  * @author AsimSubedi
  *
  */
+@Embeddable
 public class DrivingHistory {
 
 	// the options in list are: valid, suspended, permit, expired, foreignlicence,

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ektha.quote.driverinfo.exception.DriverInfoNotFoundException;
 import com.ektha.quote.driverinfo.model.Driver;
 import com.ektha.quote.driverinfo.service.DriverInfoServiceV1;
 
@@ -33,28 +34,27 @@ public class DriverInfoControllerV1 {
 	public Driver addDriverInfo(@RequestBody Driver driver) {
 		return driverInfoService.addDriverInfo(driver);
 	}
-	
+
 	@GetMapping("driverinfo")
-	public List<Driver> fetch(){
-		
+	public List<Driver> fetch() {
+
 		return driverInfoService.fetchAllDriverInfo();
 	}
 
 	@GetMapping("driverinfo/{id}")
 	public Driver verifyDriverInfo(@PathVariable("id") String id) {
 
-		return driverInfoService.fetchDriverInfo(id);
+		return driverInfoService.fetchDriverInfo(id).orElseThrow(() -> new DriverInfoNotFoundException());
 	}
 
-	@PutMapping("driverinfo")
-	public Driver updateDriverInfo(@RequestBody Driver driver) {
-		return driverInfoService.updateDriverInfo(driver);
-	}
-	
-	@DeleteMapping("driverinfo/{id}")
-	public boolean deleteDriverInfo(@PathVariable("id") String id) {
-		
-		return driverInfoService.deleteDriverInfo(id);
-	}
+	/*
+	 * @PutMapping("driverinfo") public Driver updateDriverInfo(@RequestBody Driver
+	 * driver) { return driverInfoService.updateDriverInfo(driver); }
+	 * 
+	 * @DeleteMapping("driverinfo/{id}") public boolean
+	 * deleteDriverInfo(@PathVariable("id") String id) {
+	 * 
+	 * return driverInfoService.deleteDriverInfo(id); }
+	 */
 
 }

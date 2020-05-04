@@ -3,13 +3,16 @@
  */
 package com.ektha.quote.driverinfo.model;
 
+import javax.persistence.Embeddable;
+
 /**
  * @author AsimSubedi
  *
  */
+@Embeddable
 public class ResidencyInfo {
 
-	private PrimaryResidency primaryResidency;
+	private String primaryResidency;
 
 	public ResidencyInfo() {
 	}
@@ -17,14 +20,14 @@ public class ResidencyInfo {
 	/**
 	 * @return the primaryResidency
 	 */
-	public PrimaryResidency getPrimaryResidency() {
+	public String getPrimaryResidency() {
 		return primaryResidency;
 	}
 
 	/**
 	 * @param primaryResidency the primaryResidency to set
 	 */
-	public void setPrimaryResidency(PrimaryResidency primaryResidency) {
+	public void setPrimaryResidency(String primaryResidency) {
 		this.primaryResidency = primaryResidency;
 	}
 

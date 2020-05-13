@@ -26,7 +26,7 @@ public class BootstrapUser implements ApplicationListener<ApplicationReadyEvent>
 	@Override
 	public void onApplicationEvent(ApplicationReadyEvent event) {
 		System.out.println("==== Verifying if User Exists or not ====");
-		createUserWithRole("nivtekdev", "nivtekdev", "niv@tek.dev", Role.USER);
+		createUserWithRole("admin", "admin", "niv@admin.dev", Role.ADMIN);
 		
 	}
 

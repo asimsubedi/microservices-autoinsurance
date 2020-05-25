@@ -1,0 +1,12 @@
+spring:
+  kafka:    bootstrap-servers: b-1.example.g8h28v.c4.kafka.us-east-1.amazonaws.com:9092
+    
+app:
+  topic:
+    foo: ektha
+    
+logging:
+  level:
+    root: WARN
+    org.springframework.web: INFO
+    com.memorynotfound: DEBUG

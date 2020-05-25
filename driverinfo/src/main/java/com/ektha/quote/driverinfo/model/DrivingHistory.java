@@ -3,50 +3,21 @@
  */
 package com.ektha.quote.driverinfo.model;
 
-import javax.persistence.Embeddable;
-
 /**
  * @author AsimSubedi
  *
  */
-@Embeddable
 public class DrivingHistory {
 
-	// the options in list are: valid, suspended, permit, expired, foreignlicence,
-	// business etc.
 	private String licenceStatus;
 
-	// got licence at what year?
-	private int yrsLicenced;
+	private String yrsLicenced;
 
 	public DrivingHistory() {
 	}
 
-	/**
-	 * @return the licenceStatus
-	 */
-	public String getLicenceStatus() {
-		return licenceStatus;
-	}
-
-	/**
-	 * @param licenceStatus the licenceStatus to set
-	 */
-	public void setLicenceStatus(String licenceStatus) {
+	public DrivingHistory(String licenceStatus, String yrsLicenced) {
 		this.licenceStatus = licenceStatus;
-	}
-
-	/**
-	 * @return the yrsLicenced
-	 */
-	public int getYrsLicenced() {
-		return yrsLicenced;
-	}
-
-	/**
-	 * @param yrsLicenced the yrsLicenced to set
-	 */
-	public void setYrsLicenced(int yrsLicenced) {
 		this.yrsLicenced = yrsLicenced;
 	}
 
@@ -60,7 +31,7 @@ public class DrivingHistory {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((licenceStatus == null) ? 0 : licenceStatus.hashCode());
-		result = prime * result + yrsLicenced;
+		result = prime * result + ((yrsLicenced == null) ? 0 : yrsLicenced.hashCode());
 		return result;
 	}
 
@@ -78,7 +49,10 @@ public class DrivingHistory {
 				return false;
 		} else if (!licenceStatus.equals(other.licenceStatus))
 			return false;
-		if (yrsLicenced != other.yrsLicenced)
+		if (yrsLicenced == null) {
+			if (other.yrsLicenced != null)
+				return false;
+		} else if (!yrsLicenced.equals(other.yrsLicenced))
 			return false;
 		return true;
 	}

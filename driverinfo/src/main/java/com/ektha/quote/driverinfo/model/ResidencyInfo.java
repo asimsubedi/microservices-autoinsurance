@@ -3,18 +3,19 @@
  */
 package com.ektha.quote.driverinfo.model;
 
-import javax.persistence.Embeddable;
-
 /**
  * @author AsimSubedi
  *
  */
-@Embeddable
 public class ResidencyInfo {
 
 	private String primaryResidency;
 
 	public ResidencyInfo() {
+	}
+
+	public ResidencyInfo(String primaryResidency) {
+		this.primaryResidency = primaryResidency;
 	}
 
 	/**
@@ -53,7 +54,10 @@ public class ResidencyInfo {
 		if (getClass() != obj.getClass())
 			return false;
 		ResidencyInfo other = (ResidencyInfo) obj;
-		if (primaryResidency != other.primaryResidency)
+		if (primaryResidency == null) {
+			if (other.primaryResidency != null)
+				return false;
+		} else if (!primaryResidency.equals(other.primaryResidency))
 			return false;
 		return true;
 	}

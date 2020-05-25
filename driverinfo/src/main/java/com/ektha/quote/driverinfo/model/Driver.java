@@ -1,54 +1,46 @@
-/**
- * 
- */
 package com.ektha.quote.driverinfo.model;
 
 import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
 
 /**
  * @author AsimSubedi
  *
  */
-@Entity
-@Table(name = "tbl_driver")
-public class Driver implements Serializable{
-	private static final long serialVersionUID = -1663285509218856904L;
+public class Driver implements Serializable {
 
-	@Id
-	@GeneratedValue(generator = "UUID")
-	@GenericGenerator(name = "UUID", strategy ="org.hibernate.id.UUIDGenerator")
+	private static final long serialVersionUID = 1L;
+
 	private String id;
 
-	@Column(name = "gender")
 	private String gender;
-	
-	@Column(name = "marital_status")
+
 	private String maritalStatus;
-	
-	@Column(name = "education")
+
 	private String education;
-	
-	@Column(name = "ssn")
+
 	private String ssn;
 
-	@Embedded
 	private ResidencyInfo residencyInfo;
-	
-	@Embedded
+
 	private DrivingHistory drivingHistory;
 
 	public Driver() {
 	}
+	
+	
+
+	public Driver(String id, String gender, String maritalStatus, String education, String ssn,
+			ResidencyInfo residencyInfo, DrivingHistory drivingHistory) {
+		this.id = id;
+		this.gender = gender;
+		this.maritalStatus = maritalStatus;
+		this.education = education;
+		this.ssn = ssn;
+		this.residencyInfo = residencyInfo;
+		this.drivingHistory = drivingHistory;
+	}
+
+
 
 	/**
 	 * @return the id
@@ -146,6 +138,13 @@ public class Driver implements Serializable{
 	 */
 	public void setDrivingHistory(DrivingHistory drivingHistory) {
 		this.drivingHistory = drivingHistory;
+	}
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override

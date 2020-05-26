@@ -1,5 +1,5 @@
 spring:
-  kafka:    bootstrap-servers: b-1.example.g8h28v.c4.kafka.us-east-1.amazonaws.com:9092
+  kafka:    bootstrap-servers: b-1.example.g8h28v.c4.kafka.us-east-1.amazonaws.com:9092,b-3.example.g8h28v.c4.kafka.us-east-1.amazonaws.com:9092,b-2.example.g8h28v.c4.kafka.us-east-1.amazonaws.com:9092
     
 app:
   topic:

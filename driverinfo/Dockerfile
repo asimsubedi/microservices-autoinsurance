@@ -7,7 +7,7 @@ RUN apk add bash && apk update
 
 WORKDIR /usr/app/src
 
-COPY ./target/driverinfo-0.0.1-SNAPSHOT.jar app.jar
+COPY ./target/driverinfo-0.0.1-SNAPSHOT.jar producer.jar
 
 COPY ./setup.sh setup.sh
 
@@ -18,6 +18,6 @@ RUN ls -lptr
 EXPOSE 8080
 
 # we are using CMD Now
-CMD ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "producer.jar"]
 
 #ENTRYPOINT ["sh","./setup.sh"]

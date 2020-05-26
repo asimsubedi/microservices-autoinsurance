@@ -25,7 +25,7 @@ public class Sender {
 	private static final Logger logger = LoggerFactory.getLogger(Sender.class);
 	
 	@Autowired
-	private KafkaTemplate<Driver, String> kafkaTemplate;
+	private KafkaTemplate<String, Driver> kafkaTemplate;
 	
 	@Value("${app.topic.foo}")
 	private String topic;

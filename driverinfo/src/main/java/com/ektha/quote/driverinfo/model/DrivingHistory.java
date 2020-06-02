@@ -3,11 +3,18 @@
  */
 package com.ektha.quote.driverinfo.model;
 
+import java.io.Serializable;
+
 /**
  * @author AsimSubedi
  *
  */
-public class DrivingHistory {
+public class DrivingHistory implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private String licenceStatus;
 
@@ -19,6 +26,43 @@ public class DrivingHistory {
 	public DrivingHistory(String licenceStatus, String yrsLicenced) {
 		this.licenceStatus = licenceStatus;
 		this.yrsLicenced = yrsLicenced;
+	}
+	
+	
+
+	/**
+	 * @return the licenceStatus
+	 */
+	public String getLicenceStatus() {
+		return licenceStatus;
+	}
+
+	/**
+	 * @param licenceStatus the licenceStatus to set
+	 */
+	public void setLicenceStatus(String licenceStatus) {
+		this.licenceStatus = licenceStatus;
+	}
+
+	/**
+	 * @return the yrsLicenced
+	 */
+	public String getYrsLicenced() {
+		return yrsLicenced;
+	}
+
+	/**
+	 * @param yrsLicenced the yrsLicenced to set
+	 */
+	public void setYrsLicenced(String yrsLicenced) {
+		this.yrsLicenced = yrsLicenced;
+	}
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override

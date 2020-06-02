@@ -3,12 +3,18 @@
  */
 package com.ektha.quote.driverinfo.model;
 
+import java.io.Serializable;
+
 /**
  * @author AsimSubedi
  *
  */
-public class ResidencyInfo {
+public class ResidencyInfo implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String primaryResidency;
 
 	public ResidencyInfo() {
@@ -16,6 +22,15 @@ public class ResidencyInfo {
 
 	public ResidencyInfo(String primaryResidency) {
 		this.primaryResidency = primaryResidency;
+	}
+	
+	
+
+	/**
+	 * @return the serialversionuid
+	 */
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	/**

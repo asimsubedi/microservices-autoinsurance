@@ -51,4 +51,20 @@ public class SenderConfig {
 
 	}
 
+	/**
+	 * @return the bootstrapServers
+	 */
+	public String getBootstrapServers() {
+		return bootstrapServers;
+	}
+
+	/**
+	 * @param bootstrapServers the bootstrapServers to set
+	 */
+	public void setBootstrapServers(String bootstrapServers) {
+		this.bootstrapServers = bootstrapServers;
+	}
+	
+	
+
 }

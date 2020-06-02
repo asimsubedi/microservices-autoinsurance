@@ -39,6 +39,8 @@ public class Driver implements Serializable {
 		this.residencyInfo = residencyInfo;
 		this.drivingHistory = drivingHistory;
 	}
+	
+	
 
 
 
